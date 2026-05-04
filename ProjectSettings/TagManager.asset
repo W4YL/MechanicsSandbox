@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 985766445
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BaseTiles
+    uniqueID: 1689169227
+    locked: 0
+  - name: Player
+    uniqueID: 2231421191
+    locked: 0
+  - name: TileOverlay
+    uniqueID: 1823983693
+    locked: 0
+  m_RenderingLayers:
+  - Default
