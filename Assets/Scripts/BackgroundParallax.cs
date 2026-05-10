@@ -15,7 +15,7 @@ public class BackgroundParallax : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         cloudMovement -= Time.deltaTime * cloudSpeed;
         parallaxMult = parallaxValue * 0.0625f;
