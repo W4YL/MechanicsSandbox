@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class ScarfPhysics : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Movement playerScript;
+    public Transform playerPos;
+    public Rigidbody2D scarfEnd;
+
+    public float scarfDrag;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!playerScript.IsGrounded())
+        {
+            scarfEnd.gravityScale -= (playerPos.transform.position.y - 5.494987f) * scarfDrag;
+        }
     }
 }
