@@ -6,9 +6,12 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public float horizontal;
+    public float moveInput;
 
-    public float speed;
+    public float moveSpeed;
+    public float moveAcceleration;
+    public float moveDeceleration;
+
     public float jumpPower;
 
     void Start()
@@ -18,7 +21,13 @@ public class Movement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        rb.linearVelocityX = horizontal * speed;
+        float targetSpeed = moveInput * moveSpeed;
+        float speedDifference = targetSpeed - rb.linearVelocityX;
+        float AccelRate = (Mathf.Abs(rb.linearVelocityX) > 0.01f) ? moveAcceleration : moveDeceleration;
+        float movement = speedDifference * AccelRate;
+
+        rb.AddForce(movement * Vector2.right);
+        
     }
 
     void Jump()
@@ -28,7 +37,7 @@ public class Movement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<Vector2>().x;
+        moveInput = context.ReadValue<Vector2>().x;
     }
 
     public void OnJump(InputAction.CallbackContext context)
